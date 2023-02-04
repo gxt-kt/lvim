@@ -553,4 +553,12 @@ dap.configurations.rust = dap.configurations.cpp
 不过我到vscode上实测了一下，launch.json配好了也不要这个配置，估计是历史问题，现在已经都集成了，不过我还是按照上面的gdb配了下，有发现stl显示不正常的可以配置下gdb再看看
 
 
+# 其他
+
+#### bug
+
+1. 默认的treesitter打开rust文件会报错
+参考：https://github.com/nvim-treesitter/nvim-treesitter-textobjects/issues/316
+解决方法：`touch ~/.config/lvim/queries/rust/textobjects.scm`
+
 
