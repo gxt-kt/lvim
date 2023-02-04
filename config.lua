@@ -16,8 +16,12 @@ package.path = "/home/gxt_kt/.config/lvim/?.lua;"
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false -- lvim.colorscheme = "lunar"
 -- themes: https://vimcolorschemes.com/
-lvim.colorscheme = "gruvbox"
+-- lvim.colorscheme = "gruvbox"
 -- lvim.colorscheme = "onedarker"
+lvim.colorscheme = "material"
+-- let g:material_theme_style = 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
+vim.g.material_theme_style='palenight'
+vim.g.material_terminal_italics = 1
 
 
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -1146,6 +1150,9 @@ lvim.plugins = {
         -- e.g. 80 to position at column 80, see `:h nvim_buf_set_extmark()`
       }
     end
+  },
+  {
+    'kaicataldo/material.vim',
   },
   -- { -- gxt_kt vim-tmux-clipboard : vim tmux clipboard
   --   'roxma/vim-tmux-clipboard',
