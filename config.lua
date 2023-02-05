@@ -29,7 +29,8 @@ vim.g.material_terminal_italics = 1 ]]
 -- 'marko-cerovac/material.nvim',
 lvim.colorscheme = "material"
 vim.g.material_style = "palenight"
-lvim.builtin.lualine.options.theme = "material-nvim"
+lvim.builtin.lualine.options.theme = "auto"
+-- lvim.builtin.lualine.options.theme = "material-nvim"
 -- lvim.builtin.lualine.options.theme="material-stealth"
 --
 
@@ -1191,9 +1192,9 @@ lvim.plugins = {
 
         styles = { -- Give comments style such as bold, italic, underline etc.
           comments = { italic = true },
-          strings = { --[[ bold = true ]] },
-          keywords = { --[[ underline = true ]] },
-          functions = { --[[ bold = true, undercurl = true ]] },
+          strings = { bold = true },
+          keywords = { underline = false },
+          functions = { bold = true, undercurl = false },
           variables = {},
           operators = {},
           types = {},
@@ -1236,9 +1237,17 @@ lvim.plugins = {
 
         async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
 
-        custom_colors = nil, -- If you want to everride the default colors, set this to a function
+        -- If you want to everride the default colors, set this to a function
+        -- custom_colors = nil,
+        custom_colors = function(colors)
+          -- colors.editor.selection = "#ff0000"
+        end,
 
-        custom_highlights = {}, -- Overwrite highlights with your own
+        -- change can refer here : https://github.com/marko-cerovac/material.nvim/issues/126
+        custom_highlights = {
+          IncSearch = { fg = "#000000", bg = "#ECF9ff", underline = true },
+          Search    = { fg = "#000000", bg = "#ECF9ff", bold = true },
+        }, -- Overwrite highlights with your own
       })
     end
   },
