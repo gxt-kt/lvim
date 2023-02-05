@@ -25,11 +25,11 @@ lvim.format_on_save.enabled = false -- lvim.colorscheme = "lunar"
 -- let g:material_theme_style = 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 vim.g.material_theme_style = 'palenight'
 vim.g.material_terminal_italics = 1 ]]
--- 
+--
 -- 'marko-cerovac/material.nvim',
 lvim.colorscheme = "material"
 vim.g.material_style = "palenight"
-lvim.builtin.lualine.options.theme="material-nvim"
+lvim.builtin.lualine.options.theme = "material-nvim"
 -- lvim.builtin.lualine.options.theme="material-stealth"
 --
 
@@ -334,8 +334,19 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
+-- About treesitter config my rainbow color see https://github.com/p00f/nvim-ts-rainbow/issues/104
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.rainbow.extended_mode = true
+lvim.builtin.treesitter.rainbow.max_file_lines = 5000 -- default is 1000
+lvim.builtin.treesitter.rainbow.colors = {
+  "#89ddff",
+  "#d65d0e",
+  "#d79921",
+  "#b16286",
+  "#a89984",
+  "#689d6a",
+  "#cc241d",
+}
 
 -- generic LSP settings
 
@@ -1179,7 +1190,7 @@ lvim.plugins = {
         },
 
         styles = { -- Give comments style such as bold, italic, underline etc.
-          comments = {  italic = true  },
+          comments = { italic = true },
           strings = { --[[ bold = true ]] },
           keywords = { --[[ underline = true ]] },
           functions = { --[[ bold = true, undercurl = true ]] },
