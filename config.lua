@@ -87,6 +87,10 @@ lvim.keys.normal_mode["J"]           = "mzJ`z"
 -- lvim.keys.visual_mode["J"] = ":m '>+1<CR>gv=gv"
 -- lvim.keys.visual_mode["K"] = ":m '<-2<CR>gv=gv"
 
+-- maximal keymap
+---- toggle split window maximization
+lvim.keys.normal_mode["<leader>z"] = ":MaximizerToggle<CR>"
+
 -- cmp配置修改
 -- lvim.builtin.cmp.confirm_opts.select=true
 lvim.builtin.cmp.completion = { -- 修改默认就选择第一条
@@ -1251,12 +1255,15 @@ lvim.plugins = {
           Search    = { fg = "#000000", bg = "#ECF9ff", bold = true },
 
           -- change hop-nvim color
-          HopNextKey = { fg = "#ff0000",bold = true },
+          HopNextKey = { fg = "#ff0000", bold = true },
           -- HopNextKey1 = { fg = "#00ff00", bold = true },
           -- HopNextKey2 = { fg = "#0000ff" },
         }, -- Overwrite highlights with your own
       })
     end
+  },
+  {
+    'szw/vim-maximizer',
   },
   -- { -- gxt_kt vim-tmux-clipboard : vim tmux clipboard
   --   'roxma/vim-tmux-clipboard',
