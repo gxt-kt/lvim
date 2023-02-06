@@ -103,6 +103,7 @@
 |`trouble.nvim`|可以和其他插件配合强化显示，比如查看所有todo，查看所有lsp提示信息|
 |`vim-visual-multi`|多光标|
 |`nvim-dap-virtual-text`|dap调试时行尾显示变量变化情况|
+|`material`|主题(最推荐)，其中我一直用的palenight包括vscode和clion|
 
 
 
