@@ -47,7 +47,7 @@ end
 vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.colorcolumn = "80"
 
-vim.opt.signcolumn="yes:2"
+vim.opt.signcolumn = "yes:2"
 
 lvim.leader                          = ","
 lvim.keys.insert_mode["jj"]          = "<Esc>"
@@ -342,12 +342,12 @@ lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.rainbow.extended_mode = true
 lvim.builtin.treesitter.rainbow.max_file_lines = 5000 -- default is 1000
 lvim.builtin.treesitter.rainbow.colors = {
-  "#89ddff",
   "#d65d0e",
-  "#d79921",
-  "#b16286",
-  "#a89984",
   "#689d6a",
+  "#b16286",
+  "#89ddff",
+  "#d79921",
+  "#a89984",
   "#cc241d",
 }
 
@@ -1249,6 +1249,11 @@ lvim.plugins = {
         custom_highlights = {
           IncSearch = { fg = "#000000", bg = "#ECF9ff", underline = true },
           Search    = { fg = "#000000", bg = "#ECF9ff", bold = true },
+
+          -- change hop-nvim color
+          HopNextKey = { fg = "#ff0000",bold = true },
+          -- HopNextKey1 = { fg = "#00ff00", bold = true },
+          -- HopNextKey2 = { fg = "#0000ff" },
         }, -- Overwrite highlights with your own
       })
     end
