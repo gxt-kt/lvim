@@ -49,6 +49,10 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.signcolumn = "yes:2"
 
+
+-- This will not change the clipboard content in V mode
+lvim.keys.visual_mode["p"] = '"_dP'
+
 lvim.leader                          = ","
 lvim.keys.insert_mode["jj"]          = "<Esc>"
 lvim.keys.normal_mode["<leader>\\"]  = "<C-w>v"
