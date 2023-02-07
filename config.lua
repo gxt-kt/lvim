@@ -95,6 +95,9 @@ lvim.keys.normal_mode["J"]           = "mzJ`z"
 ---- toggle split window maximization
 lvim.keys.normal_mode["<leader>z"] = ":MaximizerToggle<CR>"
 
+-- Markdown-preview keymap
+lvim.keys.normal_mode["<leader>md"] = ":MarkdownPreview<CR>"
+
 -- cmp配置修改
 -- lvim.builtin.cmp.confirm_opts.select=true
 lvim.builtin.cmp.completion = { -- 修改默认就选择第一条
@@ -341,8 +344,10 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
   "rust",
 }
+-- lvim.builtin.treesitter.auto_install = false
+-- lvim.builtin.treesitter.ensure_installed="all"
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+-- lvim.builtin.treesitter.ignore_install = {"markdown" }
 lvim.builtin.treesitter.highlight.enable = true
 
 -- About treesitter config my rainbow color see https://github.com/p00f/nvim-ts-rainbow/issues/104
@@ -1268,6 +1273,12 @@ lvim.plugins = {
   },
   {
     'szw/vim-maximizer',
+  },
+  {
+    'iamcco/markdown-preview.nvim',
+    -- run = function()
+    --   vim.fn["mkdp#util#install"]()
+    -- end,
   },
   -- { -- gxt_kt vim-tmux-clipboard : vim tmux clipboard
   --   'roxma/vim-tmux-clipboard',
