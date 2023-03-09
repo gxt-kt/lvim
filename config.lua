@@ -18,6 +18,7 @@ lvim.format_on_save.enabled = false -- lvim.colorscheme = "lunar"
 -- themes: https://vimcolorschemes.com/
 -- lvim.colorscheme = "gruvbox"
 -- lvim.colorscheme = "onedarker"
+lvim.colorscheme = "tokyonight-storm"
 --
 --
 --   'kaicataldo/material.vim',
@@ -27,9 +28,9 @@ vim.g.material_theme_style = 'palenight'
 vim.g.material_terminal_italics = 1 ]]
 --
 -- 'marko-cerovac/material.nvim',
-lvim.colorscheme = "material"
-vim.g.material_style = "palenight"
-lvim.builtin.lualine.options.theme = "auto"
+-- lvim.colorscheme = "material"
+-- vim.g.material_style = "palenight"
+-- lvim.builtin.lualine.options.theme = "auto"
 -- lvim.builtin.lualine.options.theme = "material-nvim"
 -- lvim.builtin.lualine.options.theme="material-stealth"
 --
@@ -1280,6 +1281,37 @@ lvim.plugins = {
     --   vim.fn["mkdp#util#install"]()
     -- end,
   },
+  {
+    'folke/tokyonight.nvim',
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      vim.opt.termguicolors = true
+      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+
+      vim.opt.list = true
+      vim.opt.listchars:append "space:⋅"
+      -- vim.opt.listchars:append "eol:↴"
+
+      require("indent_blankline").setup {
+          space_char_blankline = " ",
+          char_highlight_list = {
+            "IndentBlanklineIndent1",
+            "IndentBlanklineIndent2",
+            "IndentBlanklineIndent3",
+            "IndentBlanklineIndent4",
+            "IndentBlanklineIndent5",
+            "IndentBlanklineIndent6",
+          },
+      }
+    end
+  },
   -- { -- gxt_kt vim-tmux-clipboard : vim tmux clipboard
   --   'roxma/vim-tmux-clipboard',
   -- },
@@ -1321,5 +1353,5 @@ require('dap.c_cpp_rust')
 --
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python",
-  command = "set tabstop=2  shiftwidth=2"
+  command = "set tabstop=4  shiftwidth=4"
 })
