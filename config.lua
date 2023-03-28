@@ -273,6 +273,7 @@ lvim.builtin.terminal.active = true
 
 -- nvim tree
 --("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- lvim.builtin.project.manual_mode = true
 lvim.builtin.nvimtree.setup.hijack_directories.enable = true
 lvim.builtin.nvimtree.setup.hijack_directories.auto_open = true
 lvim.builtin.nvimtree.setup.diagnostics = {
