@@ -19,6 +19,7 @@ lvim.format_on_save.enabled = false -- lvim.colorscheme = "lunar"
 -- lvim.colorscheme = "gruvbox"
 -- lvim.colorscheme = "onedarker"
 lvim.colorscheme = "tokyonight-storm"
+
 --
 --
 --   'kaicataldo/material.vim',
@@ -135,6 +136,7 @@ lvim.builtin.cmp.mapping["<Tab>"] = require("cmp").mapping {
 lvim.keys.normal_mode["<leader>in"] = ":lua vim.lsp.buf.incoming_calls()<cr>"
 lvim.keys.visual_mode["<leader>lf"] = "<ESC><cmd>lua vim.lsp.buf.range_formatting()<CR>"
 lvim.builtin.which_key.mappings["la"] = { ":CodeActionMenu<CR>", "My code action" }
+
 
 -- spectre
 -- open in current file
@@ -268,7 +270,17 @@ lvim.builtin.which_key.mappings["t"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
+
 lvim.builtin.terminal.active = true
+lvim.builtin.terminal.execs = {
+      -- Change keys to needed
+      -- { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
+      -- { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
+      { vim.o.shell, "<M-`>", "Float Terminal", "float", nil },
+    }
+-- vim.keymap.set("n", "<C-t>", "<cmd>ToggleTerm<cr>")
+-- vim.keymap.set("t", "<C-t>", "<cmd>ToggleTerm<cr>")
+-- lvim.keys.normal_mode["<C-t>"] = "<cmd>ToggleTerminal<cr>"
 
 
 -- nvim tree
@@ -308,6 +320,7 @@ lvim.builtin.nvimtree.setup.view = {
       { key = { "l", "<CR>", "o" }, action = "edit" },
       { key = "h", action = "close_node" },
       { key = "v", action = "vsplit" },
+      -- { key = "C-t", action = false}, -- remove default key C-t
       -- { key = "g", action = "toggle_git_ignored" },--[[  default I ]]
       -- { key = "<BS>", action = "toggle_dotfiles" },--[[  default H ]]
     },
@@ -387,7 +400,9 @@ lvim.lsp.installer.setup.ensure_installed = {
 lvim.lsp.installer.setup.automatic_installation = false
 
 -- disable diagnostics which is super annoying in my case
-lvim.lsp.diagnostics.virtual_text = true
+-- lvim.lsp.diagnostics.virtual_text = true
+-- lvim.diagnostic.config({ virtual_text = true })
+
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
