@@ -1,5 +1,9 @@
 # 我的nvim终极配置指南
 
+适合nvim版本大于8
+当前个人使用nvim版本为9，推荐和我相同版本可以减少各种bug
+如果你使用的nvim版本和我不一样，可以看下分支
+
 <font color="#dd0000">基于lunarvim+额外自己的配置</font>
 
 <font color="#0000dd">本文主要是笔记向+教程向，基础比如插件快捷键篇笔记向，一些难配的偏教程向</font>
@@ -198,6 +202,9 @@ text object用t表示 t表示tag
 关闭或者再次开启执行 ":ASToggle"
 
 
+# 浮动终端
+
+Alt+\` 开启/关闭浮动终端
 
 # telescope
 | key       | description                                                  |
