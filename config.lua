@@ -270,17 +270,7 @@ lvim.builtin.which_key.mappings["t"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-
 lvim.builtin.terminal.active = true
-lvim.builtin.terminal.execs = {
-      -- Change keys to needed
-      -- { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
-      -- { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
-      { vim.o.shell, "<M-`>", "Float Terminal", "float", nil },
-    }
--- vim.keymap.set("n", "<C-t>", "<cmd>ToggleTerm<cr>")
--- vim.keymap.set("t", "<C-t>", "<cmd>ToggleTerm<cr>")
--- lvim.keys.normal_mode["<C-t>"] = "<cmd>ToggleTerminal<cr>"
 
 
 -- nvim tree
@@ -320,7 +310,6 @@ lvim.builtin.nvimtree.setup.view = {
       { key = { "l", "<CR>", "o" }, action = "edit" },
       { key = "h", action = "close_node" },
       { key = "v", action = "vsplit" },
-      -- { key = "C-t", action = false}, -- remove default key C-t
       -- { key = "g", action = "toggle_git_ignored" },--[[  default I ]]
       -- { key = "<BS>", action = "toggle_dotfiles" },--[[  default H ]]
     },
