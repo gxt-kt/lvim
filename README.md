@@ -567,7 +567,7 @@ dap.configurations.rust = dap.configurations.cpp
 
 #### bug
 
-1. 默认的treesitter打开rust文件会报错
+1. 默认的treesitter打开rust文件会报错 (已经修复)
 参考：https://github.com/nvim-treesitter/nvim-treesitter-textobjects/issues/316
 解决方法：`touch ~/.config/lvim/queries/rust/textobjects.scm`
 

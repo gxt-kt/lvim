@@ -673,7 +673,6 @@ lvim.plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    commit = "c81382328ad47c154261d1528d7c921acad5eae5",
     config = function()
       require 'nvim-treesitter.configs'.setup {
         textobjects = {
